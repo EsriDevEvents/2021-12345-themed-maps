@@ -2,7 +2,9 @@
 
 A pattern for supporting light, dark, high contrast, and other color schemes in ArcGIS maps.
 
-* Demo code:
+![](./img/ThemeGif.gif)
+
+* Demo code: [demo](./demo/)
 * Detailed spec: [Spec.md](./Spec.md)
 * Walkthrough (keep reading)
 
