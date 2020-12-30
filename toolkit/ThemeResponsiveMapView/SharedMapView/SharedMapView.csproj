@@ -1,0 +1,54 @@
+﻿<Project Sdk="MSBuild.Sdk.Extras/2.1.2">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;Xamarin.iOS10;MonoAndroid10.0;netcoreapp3.1</TargetFrameworks>
+    <AssemblyName>SharedMapView</AssemblyName>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+  </PropertyGroup>
+  
+  <PropertyGroup Condition="$(TargetFramework) == 'netcoreapp3.1'">
+    <UseWpf>true</UseWpf>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Esri.ArcGISRuntime" Version="100.9.0" />
+    <PackageReference Include="System.Management" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp3.1'">
+    <PackageReference Include="Esri.ArcGISRuntime.WPF">
+      <Version>100.9.0</Version>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
+    <Compile Include="*.cs" />
+    <Compile Remove="*.wpf.cs" />
+    <Compile Remove="*.ios.cs" />
+    <Compile Remove="*.android.cs" />
+    <Compile Remove="*.xamarin.cs" />
+    <Compile Remove="*.Shared.cs" />
+  </ItemGroup>
+  <ItemGroup Condition=" '$(TargetFramework)' == 'Xamarin.iOS10' ">
+    <Compile Include="*.cs" />
+    <Compile Remove="*.wpf.cs" />
+    <Compile Remove="*.android.cs" />
+    <PackageReference Include="Esri.ArcGISRuntime.Xamarin.iOS" Version="100.9.0" />
+  </ItemGroup>
+  <ItemGroup Condition=" '$(TargetFramework)' == 'MonoAndroid10.0' ">
+    <Compile Include="*.cs" />
+    <Compile Remove="*.wpf.cs" />
+    <Compile Remove="*.ios.cs" />
+    <PackageReference Include="Esri.ArcGISRuntime.Xamarin.Android" Version="100.9.0" />
+  </ItemGroup>
+  <ItemGroup Condition=" '$(TargetFramework)' == 'netcoreapp3.1' ">
+    <Compile Include="*.cs" />
+    <Compile Remove="*.ios.cs" />
+    <Compile Remove="*.android.cs" />
+    <Compile Remove="*.xamarin.cs" />
+    <PackageReference Include="Esri.ArcGISRuntime.Wpf" Version="100.9.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="ManagementEventWatcher.cs" />
+  </ItemGroup>
+</Project>
