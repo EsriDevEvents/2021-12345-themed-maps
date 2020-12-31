@@ -17,19 +17,16 @@ namespace SharedMapView
 
         public string GetCurrentSystemTheme()
         {
-            switch (_context.Resources.Configuration.UiMode)
+            if (_context.Resources.Configuration.UiMode.HasFlag(Android.Content.Res.UiMode.NightYes))
             {
-                case Android.Content.Res.UiMode.NightYes:
-                    return "Dark";
-                default:
-                    return "Light";
+                return "Dark";
             }
+            return "Light";
         }
 
         public void ManuallyTriggerThemeEvent()
         {
             SystemThemeChanged?.Invoke(this, new EventArgs());
         }
-
     }
 }

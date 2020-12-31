@@ -8,5 +8,15 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <sharedmapview:ThemeResponsiveMapView x:Name="MainMapView" />
+        <Border HorizontalAlignment="Right" VerticalAlignment="Top" Background="White" Margin="24" Padding="8">
+            <GroupBox Header="Selected Theme">
+                <StackPanel Orientation="Vertical">
+                    <RadioButton GroupName="ThemeSelection" Content="Automatic" Checked="RadioButton_Checked" />
+                    <RadioButton GroupName="ThemeSelection" Content="Light" Checked="RadioButton_Checked" />
+                    <RadioButton GroupName="ThemeSelection" Content="Dark" Checked="RadioButton_Checked" />
+                    <RadioButton GroupName="ThemeSelection" Content="High Contrast" Checked="RadioButton_Checked" />
+                </StackPanel>
+            </GroupBox>
+        </Border>
     </Grid>
 </Window>

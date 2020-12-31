@@ -33,8 +33,14 @@ namespace SharedMapView
         /// </summary>
         private async Task BuildAndApplySubsetMap()
         {
-            // Clear old map
-            base.Map = null;
+            if (_userSuppliedMap == null)
+            {
+                return;
+            }
+
+            // Clear existing map
+            _subsetMap = null;
+
             // update list of available themes
             AvailableThemes = await ThemeResponsiveMapUtilities.ThemesFromMap(_userSuppliedMap);
             var systemTheme = _themeOracle.GetCurrentSystemTheme();
@@ -62,6 +68,8 @@ namespace SharedMapView
             {
                 _subsetMap = _userSuppliedMap;
             }
+
+            _subsetMap.InitialViewpoint = GetCurrentViewpoint(ViewpointType.BoundingGeometry);
             // update map
             base.Map = _subsetMap;
         }

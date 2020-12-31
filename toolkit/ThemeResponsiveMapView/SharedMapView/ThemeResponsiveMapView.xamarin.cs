@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Esri.ArcGISRuntime.Mapping;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
@@ -46,6 +47,20 @@ namespace SharedMapView
                 {
                     _fallbackTheme = value;
                     PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(FallbackTheme)));
+                }
+            }
+        }
+
+        public new Map Map
+        {
+            get => _userSuppliedMap;
+            set
+            {
+                if (value != _userSuppliedMap)
+                {
+                    _userSuppliedMap = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Map)));
+                    _ = BuildAndApplySubsetMap();
                 }
             }
         }

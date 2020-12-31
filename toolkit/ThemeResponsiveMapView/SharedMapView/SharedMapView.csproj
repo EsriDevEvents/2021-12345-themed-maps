@@ -35,7 +35,7 @@
     <Compile Remove="*.android.cs" />
     <PackageReference Include="Esri.ArcGISRuntime.Xamarin.iOS" Version="100.9.0" />
   </ItemGroup>
-  <ItemGroup Condition=" '$(TargetFramework)' == 'MonoAndroid10.0' ">
+  <ItemGroup Condition=" $(TargetFramework.StartsWith('MonoAndroid')) ">
     <Compile Include="*.cs" />
     <Compile Remove="*.wpf.cs" />
     <Compile Remove="*.ios.cs" />

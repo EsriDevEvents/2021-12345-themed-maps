@@ -23,7 +23,20 @@ namespace WpfSample
         public MainWindow()
         {
             InitializeComponent();
-            MainMapView.ResponsiveMap = new Esri.ArcGISRuntime.Mapping.Map(new Uri("https://www.arcgis.com/home/webmap/viewer.html?webmap=8b33bee8617a46abbfc055db73e9364a"));
+            Initialize();
+        }
+        private async void Initialize()
+        {
+            MainMapView.Map = new Esri.ArcGISRuntime.Mapping.Map(new Uri("https://www.arcgis.com/home/webmap/viewer.html?webmap=8b33bee8617a46abbfc055db73e9364a"));
+            await MainMapView.Map.LoadAsync();
+            MainMapView.Map.MinScale = 0;
+            MainMapView.Map.MaxScale = 0;
+            MainMapView.SetViewpoint(new Esri.ArcGISRuntime.Mapping.Viewpoint(0, 0, 100_000_000));
+        }
+
+        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+            MainMapView.SelectedTheme = (sender as RadioButton).Content.ToString();
         }
     }
 }

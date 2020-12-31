@@ -11,5 +11,10 @@ namespace SharedMapView
         {
             Initialize(new SystemThemeOracle(context));
         }
+
+        public ThemeResponsiveMapView(Android.Content.Context context, Android.Util.IAttributeSet attrs) : base(context)
+        {
+            Initialize(new SystemThemeOracle(context));
+        }
     }
 }

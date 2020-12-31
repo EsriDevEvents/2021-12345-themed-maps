@@ -14,19 +14,19 @@ namespace SharedMapView
             Initialize(new SystemThemeOracle(this.Dispatcher));
         }
 
-        public new Map ResponsiveMap
+        public new Map Map
         {
-            get => (Map)GetValue(ResponsiveMapProperty);
-            set => SetValue(ResponsiveMapProperty, value);
+            get => (Map)GetValue(MapProperty);
+            set => SetValue(MapProperty, value);
         }
 
-        public static new readonly DependencyProperty ResponsiveMapProperty =
-            DependencyProperty.Register(nameof(ResponsiveMap), typeof(Map), typeof(ThemeResponsiveMapView),
+        public static new readonly DependencyProperty MapProperty =
+            DependencyProperty.Register(nameof(Map), typeof(Map), typeof(ThemeResponsiveMapView),
             new PropertyMetadata(OnMapChanged));
 
         public static void OnMapChanged(DependencyObject sender, DependencyPropertyChangedEventArgs args)
         {
-            if (sender is ThemeResponsiveMapView realMapView && args.Property == ResponsiveMapProperty)
+            if (sender is ThemeResponsiveMapView realMapView && args.Property == MapProperty)
             {
                 realMapView._userSuppliedMap = args.NewValue as Map;
 
