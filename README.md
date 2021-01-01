@@ -2,7 +2,7 @@
 
 A pattern for supporting light, dark, high contrast, and other color schemes in ArcGIS maps.
 
-![](./img/ThemeGif.gif)
+![Video showing theme-switching in a WPF application](./img/ThemeGif.gif)
 
 * Demo code: [demo](./demo/)
 * Detailed spec: [Spec.md](./Spec.md)
@@ -64,16 +64,17 @@ One of the most common patterns is support for a floor switcher using a feature 
 This post proposes a new pattern for supporting themes in ArcGIS. Details of the proposal are defined in [Spec.md](./Spec.md), summarized below:
 
 * Web & mobile maps & scenes are authored with top-level `GroupLayer` entries
-    * Each group layer corresponds to a specific theme, and is named as such
-    * Contents of each layer should be identical, with the exception of styling/theming
-    * Any mapping application can show the full contents of the map without causing problems
-    * *Theme-aware* applications will hide the top-level group layers for all but the currently-selected theme
-    * *Theme-aware* applications can select a theme automatically
-        * Best practice (in general, not specific to ArcGIS) is to always allow user choice
-    * The desired 'default' group should be visible by default; all others should be hidden by default
+  * Each group layer corresponds to a specific theme, and is named as such
+  * Contents of each layer should be identical, with the exception of styling/theming
+  * Any mapping application can show the full contents of the map without causing problems
+  * *Theme-aware* applications will hide the top-level group layers for all but the currently-selected theme
+  * *Theme-aware* applications can select a theme automatically
+    * Best practice (in general, not specific to ArcGIS) is to always allow user choice
+  * The desired 'default' group should be visible by default; all others should be hidden by default
 * The pattern defines `Light`, `Dark`, and `High Contrast` themes
-    * Additional themes can be defined (e.g. `Red`, `Solarized`, etc.)
-    * Maps can define any number of variations; a map supporting `Dark` theme is not required to support `High Contrast`
+  * Additional themes can be defined (e.g. `Red`, `Solarized`, etc.)
+    * Web map metadata can include properties to identify non-standard themes to use for Light, Dark, and High Contrast modes
+  * Maps can define any number of variations; a map supporting `Dark` theme is not required to support `High Contrast`
 
 Like any pattern-based mapping feature, there are benefits and drawbacks.
 
