@@ -6,6 +6,7 @@ A pattern for supporting light, dark, high contrast, and other color schemes in 
 
 * Demo code: [demo](./demo/)
 * Detailed spec: [Spec.md](./Spec.md)
+* Content resources, including templates and demo content: [Cartography.md](./Cartography.md)
 * Walkthrough (keep reading)
 
 ## Background and motivation
@@ -30,7 +31,6 @@ Apple Maps:
 |---------|---------------|
 | ![](./img/apple_light.png) | ![](./img/apple_dark.png) |
 
-
 Google Maps (navigation only):
 
 | Light | Dark |
@@ -43,7 +43,6 @@ Bing Maps:
 | Light | Dark |
 |---------|---------------|
 | ![](./img/bing_light.png) | ![](./img/bing_dark.png) |
-
 
 Support for High Contrast mode is more limited, but Bing Maps offers at least one example on Windows:
 

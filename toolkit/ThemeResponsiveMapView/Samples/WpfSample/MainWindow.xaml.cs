@@ -27,7 +27,7 @@ namespace WpfSample
         }
         private async void Initialize()
         {
-            MainMapView.Map = new Esri.ArcGISRuntime.Mapping.Map(new Uri("https://www.arcgis.com/home/webmap/viewer.html?webmap=8b33bee8617a46abbfc055db73e9364a"));
+            MainMapView.Map = new Esri.ArcGISRuntime.Mapping.Map(new Uri("https://www.arcgis.com/home/webmap/viewer.html?webmap=5199e65ba2f74d618e4c68287e59bdaa"));
             await MainMapView.Map.LoadAsync();
             MainMapView.Map.MinScale = 0;
             MainMapView.Map.MaxScale = 0;
