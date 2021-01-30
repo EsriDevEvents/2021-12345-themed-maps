@@ -1,6 +1,6 @@
-# theme-adaptive-maps-prototype
+# Theme-aware maps pattern
 
-A pattern for supporting light, dark, high contrast, and other color schemes in ArcGIS maps.
+A pattern for supporting light, dark, high contrast, and other color schemes in ArcGIS web maps.
 
 ![Video showing theme-switching in a WPF application](./img/ThemeGif.gif)
 
@@ -92,7 +92,7 @@ Drawbacks:
 
 ## Adapting content for themes
 
-Esri already provides basemaps in light and dark variations. With the [Vector Tile Style Editor](https://developers.arcgis.com/vector-tile-style-editor/), it is trivial to create variations for High Contrast or any other color scheme.
+Esri already provides basemaps in light and dark variations. With the [Vector Tile Style Editor](https://developers.arcgis.com/vector-tile-style-editor/), it is possible to create variations for High Contrast or any other color scheme.
 
 The following screenshot shows a high contrast map in use with ArcGIS Pro in high contrast:
 
