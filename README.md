@@ -6,7 +6,7 @@ A prototype pattern for supporting light, dark, high contrast, and other color s
 
 * Demo code: [demo](./demo/)
 * Detailed spec: [Spec.md](./Spec.md)
-* Content resources, including templates and demo content: [Cartography.md](./Cartography.md)
+* Content resources, including templates and demo content: [Cartography.md](./Cartography.md) & [ArcGIS Online](https://arcgisruntime.maps.arcgis.com/home/search.html?t=content&q=tags%3A%22themes%22)
 * Walkthrough (keep reading)
 
 > 🗣 **Coming from the Demo Theater?** Your feedback is wanted. Please let us know what you think in this short [five-question survey](https://arcg.is/0e4Sq1
