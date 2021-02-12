@@ -1,6 +1,6 @@
-# Theme-aware maps pattern
+# Theme-aware maps pattern prototype
 
-A pattern for supporting light, dark, high contrast, and other color schemes in ArcGIS web maps.
+A prototype pattern for supporting light, dark, high contrast, and other color schemes in ArcGIS web maps.
 
 ![Video showing theme-switching in a WPF application](./img/ThemeGif.gif)
 
@@ -8,6 +8,9 @@ A pattern for supporting light, dark, high contrast, and other color schemes in 
 * Detailed spec: [Spec.md](./Spec.md)
 * Content resources, including templates and demo content: [Cartography.md](./Cartography.md)
 * Walkthrough (keep reading)
+
+> 🗣 **Coming from the Demo Theater?** Your feedback is wanted. Please let us know what you think in this short [five-question survey](https://arcg.is/0e4Sq1
+)
 
 ## Background and motivation
 
@@ -60,7 +63,7 @@ One of the most common patterns is support for a floor switcher using a feature 
 
 ## A pattern for supporting color modes
 
-This post proposes a new pattern for supporting themes in ArcGIS. Details of the proposal are defined in [Spec.md](./Spec.md), summarized below:
+This repo proposes a new pattern for supporting themes in ArcGIS. Details of the proposal are defined in [Spec.md](./Spec.md), summarized below:
 
 * Web & mobile maps & scenes are authored with top-level `GroupLayer` entries
   * Each group layer corresponds to a specific theme, and is named as such
@@ -113,3 +116,8 @@ Map theming could be improved with the following additions to the map and scene 
 * The background color of the map could be specified for multiple themes
 * Color variables could be defined at the map level; multiple renderers could reference those variables.
 * Metadata should be added to the document specifying which themes are supported and how themes should be selected (e.g. user choice, always default to dark, etc.)
+
+> 🗣 If you made it this far, your feedback is definitely wanted. Please let us know what you think in this short [five-question survey](https://arcg.is/0e4Sq1
+)
+
+As this would be a significant platform change to support a cutting-edge feature, customer validation is needed to move forward. If you are interested, please fill out the survey linked above.
